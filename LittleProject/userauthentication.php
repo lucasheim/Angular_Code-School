@@ -3,9 +3,9 @@
 $host = "localhost";
 $user = "root";
 $pass = "bonisa";
-$db= "Usuarios";
-$conexao = mysql_connect($host,$user,$pass) or die(mysql_error());
-mysql_select_db($db) or die(mysql_error());
+$db= "usuarios";
+$conexao = mysqli_connect($host,$user,$pass) or die(mysqli_error($conexao));
+mysqli_select_db($conexao,$db) or die(mysqli_error($conexao));
 
 ?>
 
@@ -31,8 +31,8 @@ mysql_select_db($db) or die(mysql_error());
 <?php 
 $email = $_POST['email'];
 $senha = $_POST['senha'];
-$sql = mysql_query("SELECT * FROM USUARIOS WHERE email = '$email' and senha = '$senha'") or die(mysql_error());
-$row = mysql_num_rows($sql);
+$sql = mysqli_query($conexao,"SELECT * FROM USUARIOS WHERE email = '$email' and senha = '$senha'") or die(mysqli_error($conexao));
+$row = mysqli_num_rows($sql);
 if($row > 0)
 {
 	session_start();
