@@ -19,17 +19,17 @@ So, parameters:
 Wherever we want to use this module, we need to have a reference to it with *ng-app*. So, if we want to use it in an HTML page, we would do the following>
 
 ```html
-<!DOCTYPE html>
-<html ng-app = "example"> <!--Necessary to use "example" directives inside the html document-->
-<head>
-	<script type="text/javascript">
-		var app = angular.module("example",[]); //this should go inside app.js
-	</script>
-</head>
-<body>
 
-</body>
-</html>
+	<!DOCTYPE html>
+	<html ng-app = "example"> <!--Necessary to use "example" directives inside the html document-->
+	<head>
+		<script type="text/javascript">
+			var app = angular.module("example",[]); //this should go inside app.js
+		</script>
+	</head>
+	<body>
+	</body>
+	</html>
 ```
 ##Controllers
 
@@ -38,34 +38,34 @@ Controllers are where we define our app's behavior by defining functions and val
 ~~Maybe we can create a parallel between a controller and an object in POO.~~ We can declare a simple one as:
 
 ```html
-app.controller('StoreController',function(){
-	this.product = gem; //product is a property of the controller.
-});
+	app.controller('StoreController',function(){
+		this.product = gem; //product is a property of the controller.
+	});
 
-var gem = {
-	name: 'Dodecahedron',
-	price: 2.95,
-	description: '. . .',
+	var gem = {
+		name: 'Dodecahedron',
+		price: 2.95,
+		description: '. . .',
 
 ```
 
 To put it into the html, we use *ng-controller* directive:
 
  ```html
-<!DOCTYPE html>
-<html ng-app = "example"> <!--Necessary to use "example" directives inside the html document-->
-<head>
-	<script type="text/javascript">
-		var app = angular.module("example",[]); //this should go inside app.js
-	</script>
-</head>
-<body ng-controller = 'StoreController as store'> <!--ng-controller is a directive, StoreController is the name of our controller and store is our alias-->
-{{store.product.name}}<!--ALIAS.CONTROLLER PROPERTY."FIELD"-->
-</body>
-</html>
+	<!DOCTYPE html>
+	<html ng-app = "example"> <!--Necessary to use "example" directives inside the html document-->
+	<head>
+		<script type="text/javascript">
+			var app = angular.module("example",[]); //this should go inside app.js
+		</script>
+	</head>
+	<body ng-controller = 'StoreController as store'> <!--ng-controller is a directive, StoreController is the name of our controller and store is our alias-->
+	{{store.product.name}}<!--ALIAS.CONTROLLER PROPERTY."FIELD"-->
+	</body>
+	</html>
 ```
 
-###Some directives
+##Directives
 
 ####NG-APP
 
@@ -116,7 +116,60 @@ To put it into the html, we use *ng-controller* directive:
 		</div>
 	</div>
 	```
+####NG-SRC
 
+	To display images:
+
+	```html
+	<h3>
+		{{product.name}}
+		<em class="pull-right">{{product.price | currency}}</em>
+		<img ng-src="{{product.images[0].full}}">
+	</h3>
+	```
+
+
+##FILTERS
+
+	First, it is important for us to know what the PIPE CARACTHER does:
+		| -> Take the result of the first expression and send the output into the second expression.
+
+	So, when we have:
+
+	```html
+	<div ng-controller = "StoreController as store">
+		<ul class="list-group">
+			<li class="list-group-item" ng-repeat="product in store.products">
+				<h3>
+					{{product.name}}
+					<em class="pull-right">{{product.price | currency}}</em>
+				</h3>
+			</li>
+		</ul>
+	</div>
+	```
+	We are saying:
+
+		1. Get the value of product.price
+		2. Output it as a currency (FILTER)
+
+	It'll automatically add the dollar sign and the decimals.
+
+###Some filters
+
+	```html
+	{{'1388123412323' | date:'MM/dd/yyyy' @ h:mma'}} //Convert date
+
+	{{'octagon gem' | uppercase}} //all upper/lower case
+
+	{{'My Description' | limitTo:8}}//limit the number of characters
+
+	<li ng-repeat="product in store.products | limiteTo:3">//limit the number of repeats
+
+	<li ng-repeat="product in store.products | orderBy> '-price'">//order by "-" = descending order
+
+	```
+	
 
 
 
