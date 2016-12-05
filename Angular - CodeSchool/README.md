@@ -67,6 +67,21 @@ To put it into the html, we use *ng-controller* directive:
 
 ###Some directives
 
+####NG-APP
+
+	As explained in the Module section, this is for attaching the application module to the page.
+
+	```html
+	<html ng-app="store">
+	```
+####NG-CONTROLLER
+
+	As explained in the Controllers section, this is for attaching the Controller function to the page.
+
+	```html
+	<body ng-controller="StoreController as store">
+	```
+
 ####NG-SHOW
 
 	Allow us to control the visibility of an HTML element:
@@ -77,6 +92,31 @@ To put it into the html, we use *ng-controller* directive:
 	<p>  {{store.product.description}}</p>
 	<button ng-show="store.product.canPurchase"> Add to Cart</button>
 	```
+####NG-HIDE
+
+	Yeap, exactly the opposite of the above.
+
+####NG-REPEAT
+
+	This is a very useful one, so we can show several items from an array.
+
+	So, we have:
+	Controller: store
+	Property: products
+
+	The code says, use the StoreController (alias = store)
+					repeat each item on the products array, from the controller store as product(alias)
+
+	```html
+	<div ng-controller = "StoreController as store"> 
+		<div ng-repeat = "product in store.products">
+			<h1> {{product.name}} </h1>
+			<h2> ${{product.price}}</h2>
+			<p>  {{product.description}}</p>
+		</div>
+	</div>
+	```
+
 
 
 

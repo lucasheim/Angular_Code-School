@@ -5,17 +5,17 @@
 </head>
 <body>
 	<div ng-controller = "StoreController as store">
-	<div ng-show = "store.product.soldOut">
+	<div ng-repeat = "product in store.products">
 	
 		 <!--
 		 NG-CONTROLLER is the DIRECTIVE
 		 STORECONTROLLER is the CONTROLLER NAME
 		 STORE is the ALIAS
 		 -->
-		<h1> {{store.product.name}} </h1>
-		<h2> ${{store.product.price}}</h2>
-		<p>  {{store.product.description}}</p>
-		<button ng-show="store.product.canPurchase"> Add to Cart</button>
+		<h1> {{product.name}} </h1>
+		<h2> ${{product.price}}</h2>
+		<p>  {{product.description}}</p>
+		<button ng-show="product.canPurchase"> Add to Cart</button>
 	</div>
 	</div>
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
