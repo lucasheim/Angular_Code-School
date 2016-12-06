@@ -66,14 +66,14 @@ To put it into the html, we use *ng-controller* directive:
 
 ##Directives
 
-####NG-APP
+####NG-APP####
 
 As explained in the Module section, this is for attaching the application module to the page.
 
 ```html
 <html ng-app="store">
 ```
-####NG-CONTROLLER
+####NG-CONTROLLER####
 
 As explained in the Controllers section, this is for attaching the Controller function to the page.
 
@@ -81,7 +81,7 @@ As explained in the Controllers section, this is for attaching the Controller fu
 <body ng-controller="StoreController as store">
 ```
 
-####NG-SHOW
+####NG-SHOW####
 
 Allow us to control the visibility of an HTML element:
 
@@ -91,11 +91,11 @@ Allow us to control the visibility of an HTML element:
 <p>  {{store.product.description}}</p>
 <button ng-show="store.product.canPurchase"> Add to Cart</button>
 ```
-####NG-HIDE
+####NG-HIDE####
 
 Yeap, exactly the opposite of the above.
 
-####NG-REPEAT
+####NG-REPEAT####
 
 This is a very useful one, so we can show several items from an array.
 
@@ -116,7 +116,7 @@ The code says:
 	</div>
 </div>
 ```
-####NG-SRC
+####NG-SRC####
 
 To display images:
 
@@ -128,7 +128,7 @@ To display images:
 </h3>
 ```
 
-####NG-CLICK
+####NG-CLICK####
 
 It raises an event when that part of the html is clicked. It takes an expression for assigning values.
 
@@ -141,7 +141,7 @@ It raises an event when that part of the html is clicked. It takes an expression
 ```
 When you click, the {{tab}} value automatically gets updated. You can use {{tab}} to display it.
 
-####NG-INIT
+####NG-INIT####
 
 Allows us to evaluate an expression in the current scope
 
@@ -160,7 +160,7 @@ Allows us to evaluate an expression in the current scope
 </section>
 ```
 
-####NG-CLASS
+####NG-CLASS####
 
 Okay, this one is a bit tricky. An example:
 
@@ -174,7 +174,7 @@ Okay, this one is a bit tricky. An example:
 			</section>
 ```
 So, this basically means that:
-If tab===X, X being the value being compared in each <li>, then we set the li class to active. This is the format in which we pass an object to the ng-class directive:
+If tab===X, X being the value being compared in each <li>, then we set the li class to active. This is the format in which we pass an object to the ng-class directive: 
 *{nameOfTheClass:booleanExpression}*
 
 We can use a simple string too:
