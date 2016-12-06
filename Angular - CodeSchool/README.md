@@ -160,6 +160,36 @@ To put it into the html, we use *ng-controller* directive:
 	</section>
 	```
 
+####NG-CLASS
+
+	Okay, this one is a bit tricky. An example:
+
+	```html
+	<section ng-init="tab = 1">
+					<ul class="nav nav-pills">
+						<li ng-class="{active:tab===1}"> <a href ng-click="tab = 1">Description</a></li>
+						<li ng-class="{active:tab===2}"> <a href ng-click="tab = 2">Specifications</a></li>
+						<li ng-class="{active:tab===3}"> <a href ng-click="tab = 3">Reviews</a></li>
+					</ul>
+				</section>
+	```
+	So, this basically means that:
+		If tab===X, X being the value being compared in each <li>, then we set the li class to active. This is the format in which we pass an object to the ng-class directive:
+				{nameOfTheClass:booleanExpression}
+
+	We can use a simple string too:
+
+	```html
+	<section ng-init="tab = 1">
+					<ul class="nav nav-pills">
+						<li ng-class="active"> <a href ng-click="tab = 1">Description</a></li>
+						<li ng-class="active"> <a href ng-click="tab = 2">Specifications</a></li>
+						<li ng-class="active"> <a href ng-click="tab = 3">Reviews</a></li>
+					</ul>
+				</section>
+	```
+	So we just set a class.
+
 ##FILTERS
 
 	First, it is important for us to know what the PIPE CARACTHER does:
