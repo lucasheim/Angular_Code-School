@@ -128,6 +128,37 @@ To put it into the html, we use *ng-controller* directive:
 	</h3>
 	```
 
+####NG-CLICK
+
+	It raises an event when that part of the html is clicked. It takes an expression for assigning values.
+
+	```html
+	<ul class="nav nav-pills">
+			<li> <a href ng-click="tab = 1">Description</a></li>
+			<li> <a href ng-click="tab = 2">Specifications</a></li>
+			<li> <a href ng-click="tab = 3">Reviews</a></li>
+		</ul>
+	```
+	When you click, the {{tab}} value automatically gets updated. You can use {{tab}} to display it.
+
+####NG-INIT
+
+	Allows us to evaluate an expression in the current scope
+
+	```html
+	<section ng-init="tab = 1">
+					<ul class="nav nav-pills">
+						<li> <a href ng-click="tab = 1">Description</a></li>
+						<li> <a href ng-click="tab = 2">Specifications</a></li>
+						<li> <a href ng-click="tab = 3">Reviews</a></li>
+					</ul>
+				</section>
+				<div class="panel" ng-show="tab===1">
+					<h4>Description</h4>
+					<p>{{product.description}}</p>
+				</div>
+	</section>
+	```
 
 ##FILTERS
 

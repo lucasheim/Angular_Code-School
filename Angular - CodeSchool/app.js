@@ -14,7 +14,7 @@ var gems = [
 {
 	name: "Dodecahedron",
 	price: 2.95,
-	description: ". . .",
+	description: "This is a great Dodecahedron, taken from the Titicaca Lake",
 	images: 
 	[//start of the array
 	{//image object, we can use something in the lines of product.images[0].full
@@ -31,7 +31,7 @@ var gems = [
 {
 	name: "Pentagonal Gem",
 	price: 5.95,
-	description: ". . .",
+	description: "The Pentagonal Gem has a great value, been one of the rarest gems in the world",
 	canPurchase: true,
 	soldOut: true,
 }
