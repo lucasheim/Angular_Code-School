@@ -46,7 +46,6 @@ Controllers are where we define our app's behavior by defining functions and val
 		name: 'Dodecahedron',
 		price: 2.95,
 		description: '. . .',
-
 ```
 
 To put it into the html, we use *ng-controller* directive:
@@ -69,14 +68,14 @@ To put it into the html, we use *ng-controller* directive:
 
 ####NG-APP
 
-	As explained in the Module section, this is for attaching the application module to the page.
+As explained in the Module section, this is for attaching the application module to the page.
 
 ```html
 <html ng-app="store">
 ```
 ####NG-CONTROLLER
 
-	As explained in the Controllers section, this is for attaching the Controller function to the page.
+As explained in the Controllers section, this is for attaching the Controller function to the page.
 
 ```html
 <body ng-controller="StoreController as store">
@@ -84,7 +83,7 @@ To put it into the html, we use *ng-controller* directive:
 
 ####NG-SHOW
 
-	Allow us to control the visibility of an HTML element:
+Allow us to control the visibility of an HTML element:
 
 ```html
 <h1> {{store.product.name}} </h1>
@@ -94,18 +93,19 @@ To put it into the html, we use *ng-controller* directive:
 ```
 ####NG-HIDE
 
-	Yeap, exactly the opposite of the above.
+Yeap, exactly the opposite of the above.
 
 ####NG-REPEAT
 
-	This is a very useful one, so we can show several items from an array.
+This is a very useful one, so we can show several items from an array.
 
-	So, we have:
-	Controller: store
-	Property: products
+So, we have:
+Controller: store
+Property: products
 
-	The code says, use the StoreController (alias = store)
-					repeat each item on the products array, from the controller store as product(alias)
+The code says:
+1. use the StoreController (alias = store)
+2. repeat each item on the products array, from the controller store as product(alias)
 
 ```html
 <div ng-controller = "StoreController as store"> 
@@ -118,7 +118,7 @@ To put it into the html, we use *ng-controller* directive:
 ```
 ####NG-SRC
 
-	To display images:
+To display images:
 
 ```html
 <h3>
@@ -130,7 +130,7 @@ To put it into the html, we use *ng-controller* directive:
 
 ####NG-CLICK
 
-	It raises an event when that part of the html is clicked. It takes an expression for assigning values.
+It raises an event when that part of the html is clicked. It takes an expression for assigning values.
 
 ```html
 <ul class="nav nav-pills">
@@ -139,11 +139,11 @@ To put it into the html, we use *ng-controller* directive:
 		<li> <a href ng-click="tab = 3">Reviews</a></li>
 	</ul>
 ```
-	When you click, the {{tab}} value automatically gets updated. You can use {{tab}} to display it.
+When you click, the {{tab}} value automatically gets updated. You can use {{tab}} to display it.
 
 ####NG-INIT
 
-	Allows us to evaluate an expression in the current scope
+Allows us to evaluate an expression in the current scope
 
 ```html
 <section ng-init="tab = 1">
@@ -162,7 +162,7 @@ To put it into the html, we use *ng-controller* directive:
 
 ####NG-CLASS
 
-	Okay, this one is a bit tricky. An example:
+Okay, this one is a bit tricky. An example:
 
 ```html
 <section ng-init="tab = 1">
@@ -173,11 +173,11 @@ To put it into the html, we use *ng-controller* directive:
 				</ul>
 			</section>
 ```
-	So, this basically means that:
-		If tab===X, X being the value being compared in each <li>, then we set the li class to active. This is the format in which we pass an object to the ng-class directive:
-				{nameOfTheClass:booleanExpression}
+So, this basically means that:
+If tab===X, X being the value being compared in each <li>, then we set the li class to active. This is the format in which we pass an object to the ng-class directive:
+*{nameOfTheClass:booleanExpression}*
 
-	We can use a simple string too:
+We can use a simple string too:
 
 ```html
 <section ng-init="tab = 1">
@@ -188,14 +188,14 @@ To put it into the html, we use *ng-controller* directive:
 				</ul>
 			</section>
 ```
-	So we just set a class.
+So we just set a class.
 
 ##FILTERS
 
-	First, it is important for us to know what the PIPE CARACTHER does:
-		| -> Take the result of the first expression and send the output into the second expression.
+First, it is important for us to know what the PIPE CARACTHER does:
+	| -> Take the result of the first expression and send the output into the second expression.
 
-	So, when we have:
+So, when we have:
 
 ```html
 <div ng-controller = "StoreController as store">
@@ -209,12 +209,12 @@ To put it into the html, we use *ng-controller* directive:
 	</ul>
 </div>
 ```
-	We are saying:
+We are saying:
 
-		1. Get the value of product.price
-		2. Output it as a currency (FILTER)
+1. Get the value of product.price
+2. Output it as a currency (FILTER)
 
-	It'll automatically add the dollar sign and the decimals.
+It'll automatically add the dollar sign and the decimals.
 
 ###Some filters
 
@@ -231,10 +231,8 @@ To put it into the html, we use *ng-controller* directive:
 
 ```
 	
-
-
-
 ##References
 
 Angular modules: [W3 Schools](http://www.w3schools.com/angular/angular_modules.asp)
+
 Most of the things: [CodeSchool](http://campus.codeschool.com/courses/shaping-up-with-angular-js)
