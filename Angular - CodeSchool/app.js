@@ -4,7 +4,23 @@
 
 	app.controller('StoreController',function()
 	{
-		this.products = gems; //product is a property of the controller.
+		this.products = [
+		{
+			name: 'Awesome Multi-touch keyboard',
+			price: 250.00,
+			description: '...',
+			reviews:[
+			{
+				stars: 5,
+				body: "I love this product!",
+				author: "joe@thomas.com"
+			},
+			{
+				stars: 1,
+				body: "This product sucks",
+				author: "tim@hater.com"
+			}]
+		}]
 	});
 
 	app.controller('PanelController',function()

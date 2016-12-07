@@ -190,6 +190,20 @@ We can use a simple string too:
 ```
 So we just set a class.
 
+####NG-MODEL####
+
+This is a great one, you use it so you bind input fields to global properties. We can have an input field like this:
+
+```html
+<input ng-model="review.author" type="email" />
+```
+Using *ng-model*, now we can get the value to validate or to show it directly on the page using the properties syntax:
+
+```html
+<cite>by: {{review.author}}</cite><br>
+```
+
+
 ##FILTERS
 
 First, it is important for us to know what the PIPE CARACTHER does:
