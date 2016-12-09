@@ -203,6 +203,26 @@ Using *ng-model*, now we can get the value to validate or to show it directly on
 <cite>by: {{review.author}}</cite><br>
 ```
 
+####NG-SUBMIT####
+
+It allows us to call a function when the form is submitted.
+
+```html
+<form name="reviewForm" ng-submit="reviewCtrl.addReview(product)"></form>
+```
+So, when the form is submitted, we'll call the function ADDREVIEW, in the REVIEWCTRL controller, sending PRODUCT as an parameter
+
+##DUNNO THE NAME
+
+#####PUSH####
+
+Use it to add a new item to an array
+```javascript
+this.addReview = function(product)
+	{
+		product.reviews.push(this.review); //Putting this.review (the one we are creating) to the reviews array of product.
+	}
+```
 
 ##FILTERS
 

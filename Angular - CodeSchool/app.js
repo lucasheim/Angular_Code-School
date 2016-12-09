@@ -39,6 +39,17 @@
 
 	});
 
+	app.controller('ReviewController',function()
+	{
+		this.review = {};
+
+		this.addReview = function(product)
+		{
+			product.reviews.push(this.review); //Putting this.review (the one we are creating) to the reviews array of product.
+			this.review={};
+		}
+	});
+
 
 var gems = 
 [
