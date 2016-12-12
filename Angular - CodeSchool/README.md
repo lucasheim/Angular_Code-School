@@ -242,6 +242,35 @@ In your HTML, you will create a tag like:
 <product-title></product-title>
 ```
 
+###CONTROLLER INSIDE DIRECTIVE###
+
+	This is a very good practice to organize your code. You can put your whole controller code inside the controller property of your directive. Example:
+
+```javascript
+app.directive('productPanels',function(){
+		return{
+			restrict: 'E', //Element
+			templateUrl: 'product-panels.html', //this page will contain your html for the panels section
+			controller: function() //here you can write your controller
+			{
+				this.tab = 1;
+
+				this.selectTab = function(setTab)
+				{
+					this.tab = setTab;
+				};
+
+				this.isSelected = function(checkTab)
+				{
+					return this.tab === checkTab;
+				};
+			},
+			controllerAs: 'panel' //just the alias, like "PanelController as panel"
+		};
+	});
+```
+
+
 ##DUNNO THE NAME
 
 #####PUSH####
@@ -254,7 +283,7 @@ this.addReview = function(product)
 	}
 ```
 
-##FILTERS
+##FILTERS##
 
 First, it is important for us to know what the PIPE CARACTHER does:
 	| -> Take the result of the first expression and send the output into the second expression.
@@ -280,7 +309,7 @@ We are saying:
 
 It'll automatically add the dollar sign and the decimals.
 
-###Some filters
+###Some filters###
 
 ```html
 {{'1388123412323' | date:'MM/dd/yyyy' @ h:mma'}} //Convert date
@@ -294,6 +323,10 @@ It'll automatically add the dollar sign and the decimals.
 <li ng-repeat="product in store.products | orderBy> '-price'">//order by "-" = descending order
 
 ```
+##Dependencies##
+
+	
+
 	
 ##References
 
