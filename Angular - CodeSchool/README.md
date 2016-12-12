@@ -325,7 +325,17 @@ It'll automatically add the dollar sign and the decimals.
 ```
 ##Dependencies##
 
-	
+	It's good practice to use several modules in an application. So, we'll have app.js, the main module, containing the general behaviour, attached to the html via ng-app.
+
+	We can have products.js, a separated javascript file which contains all the functionality for products.
+
+	When we want our app to know that we have several modules, we can put them in the dependencies of our main module, like:
+
+```javascript
+var app = angular.module('store',['store-products']);
+```
+
+
 
 	
 ##References
