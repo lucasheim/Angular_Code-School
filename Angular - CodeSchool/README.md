@@ -212,6 +212,36 @@ It allows us to call a function when the form is submitted.
 ```
 So, when the form is submitted, we'll call the function ADDREVIEW, in the REVIEWCTRL controller, sending PRODUCT as an parameter
 
+###CUSTOM DIRECTIVES###
+	
+You can use custom directives when you have a piece of html that is going to be used in two or more parts of the website/app. You have to create the directive within the js file:
+
+```javascript
+app.directive('productTitle',function(){
+		return{
+			restrict: 'E',
+			templateUrl: 'product-title.html',
+		};
+	});
+```
+The syntax is:
+
+```javascript
+app.directive('nameOfTheTagInCamelCase',function(){
+		return{
+			restrict: 'E', //You can use 'E' for ELEMENT, 'A' for ATTRIBUTE
+			templateUrl: 'product-title.html', //You can use "template: ..." to indicate a single thing like "<h3> example </h3>"
+			//Or you can use "templateUrl: ..." to indicate a file with your html code
+		};
+	});
+```
+
+In your HTML, you will create a tag like:
+
+```html
+<product-title></product-title>
+```
+
 ##DUNNO THE NAME
 
 #####PUSH####
